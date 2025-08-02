@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ansaruddeen E - Software Architect Portfolio</title>
+    <!-- <link rel="icon" type="image/png" href="#" sizes="32x32"> -->
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+
         /* Custom scrollbar for a cleaner look */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #888;
             border-radius: 10px;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
 
         /* Hero section background pattern */
         .hero-pattern {
-            background-color: #f8fafc; /* bg-slate-50 */
+            background-color: #f8fafc;
+            /* bg-slate-50 */
             background-image: radial-gradient(#e2e8f0 1px, transparent 1px),
-                              radial-gradient(#e2e8f0 1px, transparent 1px);
+                radial-gradient(#e2e8f0 1px, transparent 1px);
             background-size: 40px 40px;
             background-position: 0 0, 20px 20px;
         }
@@ -43,6 +51,7 @@
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
+
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -52,36 +61,85 @@
         .btn-primary {
             transition: all 0.3s ease;
         }
+
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 15px rgba(0, 119, 204, 0.3);
         }
+
         .btn-secondary {
             transition: all 0.3s ease;
         }
+
         .btn-secondary:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 15px rgba(100, 116, 139, 0.3);
         }
+
+        /* Custom CSS for Skill Cards */
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            /* Equivalent to rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            /* Equivalent to shadow-md */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            /* Equivalent to hover:shadow-xl */
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            color: #3b82f6;
+            /* Equivalent to text-blue-600 */
+            margin-bottom: 0.75rem;
+            /* Equivalent to mb-3 */
+        }
+
+        .skill-name {
+            font-size: 1.125rem;
+            /* Equivalent to text-lg */
+            font-weight: 600;
+            /* Equivalent to font-semibold */
+            color: #1f2937;
+            /* Equivalent to text-gray-900 */
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
 
+<body class="bg-gray-50 text-gray-800">
     <!-- Navigation Bar -->
     <nav class="bg-white shadow-lg fixed w-full z-50 top-0">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition duration-300">Ansaruddeen E</a>
+            <a href="#hero"
+                class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition duration-300">Ansaruddeen E</a>
             <div class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">About</a>
-                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Skills</a>
-                <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Experience</a>
-                <a href="#education" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Education</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
+                <a href="#skills"
+                    class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Skills</a>
+                <a href="#experience"
+                    class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Experience</a>
+                <a href="#education"
+                    class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Education</a>
+                <a href="#contact"
+                    class="text-gray-600 hover:text-blue-600 transition duration-300 font-medium">Contact</a>
             </div>
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
                 </svg>
             </button>
         </div>
@@ -95,27 +153,38 @@
         </div>
     </nav>
 
+    <!-- Typing Effect -->
+    <div class="fixed bottom-4 right-4 z-50 text-blue-600">
+        <span id="typing-effect"></span>
+    </div>
+
     <!-- Hero Section -->
     <section id="hero" class="hero-pattern min-h-screen flex items-center justify-center text-center pt-20">
         <div class="container mx-auto px-6 py-12">
             <div class="flex flex-col items-center">
                 <!-- Placeholder for a profile image -->
                 <!-- <img src="https://placehold.co/150x150/CBD5E1/475569?text=AE" alt="Ansaruddeen E" class="w-36 h-36 rounded-full border-4 border-white shadow-lg mb-6 object-cover"> -->
-                <img src="https://media.licdn.com/dms/image/v2/D5603AQEgNA8vOzA4sQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1689701231054?e=2147483647&v=beta&t=15sSXQEVDCC8rM1wWpunuZmY84KfEFA1Abqg5yeQ8hc" alt="Ansaruddeen E" class="w-36 h-36 rounded-full border-4 border-white shadow-lg mb-6 object-cover">
+                <img src="https://media.licdn.com/dms/image/v2/D5603AQEgNA8vOzA4sQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1689701231054?e=2147483647&v=beta&t=15sSXQEVDCC8rM1wWpunuZmY84KfEFA1Abqg5yeQ8hc"
+                    alt="Ansaruddeen E"
+                    class="w-36 h-36 rounded-full border-4 border-white shadow-lg mb-6 object-cover">
                 <h1 class="text-5xl font-extrabold text-gray-900 mb-4 leading-tight animate-fade-in-up">
                     Ansaruddeen E
                 </h1>
                 <p class="text-2xl text-gray-700 mb-8 max-w-2xl animate-fade-in-up delay-100">
-                    <b>Software Architect | Team Leader | Software Engineer</b> <br> Passionate about Innovation and Process Optimization
+                    <b>Software Architect | Team Lead | Software Engineer</b> <br>
+                    Passionate about Innovation and Process Optimization <br>
                 </p>
                 <div class="flex space-x-4 animate-fade-in-up delay-200">
-                    <a href="#contact" class="btn-primary bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700">
-                        Contact Me
+                    <a href="#contact"
+                        class="btn-primary bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-blue-700">
+                        Contact
                     </a>
-                    <a href="https://www.linkedin.com/in/ansaruddeene" target="_blank" class="btn-secondary bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800">
+                    <a href="https://www.linkedin.com/in/ansaruddeene" target="_blank"
+                        class="btn-secondary bg-gray-700 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800">
                         LinkedIn
                     </a>
                 </div>
+                <!-- <span id="typing-effect"></span> -->
             </div>
         </div>
     </section>
@@ -126,68 +195,69 @@
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-10">About Me</h2>
             <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
                 <p class="mb-4">
-                    As a dedicated Software Architect with five years of experience, I am deeply passionate about innovation and process optimization, particularly within the manufacturing and supply chain industries. My approach blends profound technical expertise with strategic thinking, allowing me to architect scalable, efficient, and secure web applications that drive operational excellence.
+                    As a dedicated Software Architect with <span id="years-of-experience"></span> years of experience, I
+                    am deeply passionate about innovation and process optimization. My expertise spans a variety of
+                    industries, including <strong>manufacturing, supply chain, e-commerce, healthcare, and
+                        education</strong>. I specialize in architecting scalable, efficient, and secure web
+                    applications that drive operational excellence across these diverse sectors.
                 </p>
                 <p class="mb-4">
-                    I thrive on fostering collaboration and elevating businesses through technological innovation. My commitment extends to leading talented engineering teams, driving technology choices, and ensuring adherence to best practices. I possess a strong sense of ownership, independence, and effective communication skills, always striving to deliver solutions that exceed business goals.
+                    My approach blends profound technical expertise with strategic leadership. I thrive on fostering
+                    collaboration and empowering engineering teams, guiding them in technology choices and ensuring
+                    adherence to best practices. I possess a strong sense of ownership and independence, always striving
+                    to deliver solutions that not only meet but exceed business goals.
                 </p>
                 <p>
-                    My interest in leveraging distributed computing for complex problem-solving, coupled with a solid foundation in Object-Oriented Concepts, enables me to design and implement robust software solutions. I have in-depth knowledge of Web Applications and Web Services, with hands-on experience in Python, SQL, and NoSQL databases, including optimizing and debugging complex database elements.
+                    I leverage a solid foundation in Object-Oriented Concepts and distributed computing to design and
+                    implement robust software solutions. I have in-depth knowledge of Web Applications and Web Services,
+                    with hands-on experience in Python, SQL, and NoSQL databases, including optimizing and debugging
+                    complex database elements.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
+    <!-- Skill Section -->
     <section id="skills" class="py-16 bg-gray-100 fade-in-section">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center text-gray-900 mb-10">Skills</h2>
-            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Languages -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Languages</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Python</li>
-                        <li>Dart</li>
-                        <li>PHP</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Java</li>
-                        <li>JavaScript</li>
-                        <li>Kotlin</li>
-                        <li>TypeScript</li>
-                    </ul>
+            <div class="max-w-7xl mx-auto">
+                <!-- <div class="mb-12">
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-6">Languages</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <div class="skill-card">
+                            <span class="skill-icon">
+                                <i class="fab fa-python"></i>
+                            </span>
+                            <p class="skill-name">Python</p>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="mb-12">
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-6">Languages</h3>
+                    <div id="languages-grid"
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
                 </div>
-                <!-- Frameworks -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Frameworks</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Django</li>
-                        <li>Angular</li>
-                        <li>Android</li>
-                        <li>Flutter</li>
-                        <li>FastAPI</li>
-                        <li>Vue.js</li>
-                    </ul>
+                <div class="mb-12">
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-6">Frameworks</h3>
+                    <div id="frameworks-grid"
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
                 </div>
-                <!-- Libraries & Technologies -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Libraries & Technologies</h3>
-                    <ul class="list-disc list-inside text-gray-700 space-y-2">
-                        <li>Py-Libs</li>
-                        <li>Bootstrap</li>
-                        <li>jQuery</li>
-                        <li>Django ORM</li>
-                        <li>Web Services</li>
-                        <li>REST APIs</li>
-                        <li>SQL & NoSQL</li>
-                        <li>Git</li>
-                        <li>IoT</li>
-                        <li>Agile</li>
-                        <li>Crypto Payments</li>
-                        <li>Payment Gateways</li>
-                    </ul>
+                <div class="mb-12">
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-6">Libraries & Technologies</h3>
+                    <div id="librariesAndTechs-grid"
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
                 </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-6">Architectural Skills</h3>
+                    <div id="architectural-skills-grid"
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -200,51 +270,74 @@
                 <!-- Lidex Software Architect -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-semibold text-gray-900">Software Architect</h3>
-                    <p class="text-blue-600 font-medium mb-2">Lidex India Pvt. Ltd., Kerala, India | July 2023 – Present</p>
+                    <p class="text-blue-600 font-medium mb-2">Lidex India Pvt. Ltd., Kerala, India | July 2023 – Present
+                    </p>
                     <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Researched best practices, industry trends, and cutting-edge technology to implement highly efficient, effective, and scalable web applications, ensuring robust reliability and security.</li>
-                        <li>Contributed to high-level architectural decisions, guiding the development of mission-critical software solutions.</li>
+                        <li>Researched best practices, industry trends, and cutting-edge technology to implement highly
+                            efficient, effective, and scalable web applications, ensuring robust reliability and
+                            security.</li>
+                        <li>Contributed to high-level architectural decisions, guiding the development of
+                            mission-critical software solutions.</li>
                     </ul>
                 </div>
                 <!-- Lidex Software Engineering Team Lead -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-semibold text-gray-900">Software Engineering Team Lead</h3>
-                    <p class="text-blue-600 font-medium mb-2">Lidex India Pvt. Ltd., Kerala, India | February 2022 – Present</p>
+                    <p class="text-blue-600 font-medium mb-2">Lidex India Pvt. Ltd., Kerala, India | February 2022 –
+                        Present</p>
                     <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Led the design, development, and optimization of critical core functionality within the ERP system, specifically tailored for manufacturing and supplier domains.</li>
-                        <li>Actively contributed to rigorous code reviews, ensuring strict adherence to best practices and facilitating seamless system integrations.</li>
-                        <li>Mentored team members, fostering a culture of continuous learning and driving significant technical growth within the engineering team.</li>
+                        <li>Led the design, development, and optimization of critical core functionality within the ERP
+                            system, specifically tailored for manufacturing and supplier domains.</li>
+                        <li>Actively contributed to rigorous code reviews, ensuring strict adherence to best practices
+                            and facilitating seamless system integrations.</li>
+                        <li>Mentored team members, fostering a culture of continuous learning and driving significant
+                            technical growth within the engineering team.</li>
                     </ul>
                 </div>
                 <!-- Lidex Software Engineer -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-semibold text-gray-900">Software Engineer</h3>
-                    <p class="text-blue-600 font-medium mb-2">Lidex India Pvt. Ltd., Kerala, India | July 2021 – Present</p>
+                    <p class="text-blue-600 font-medium mb-2">Lidex India Pvt. Ltd., Kerala, India | July 2021 – Present
+                    </p>
                     <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Designed and developed core functionality for ERP systems, revolutionizing industries through technology with a focus on driving operational efficiency and empowering businesses.</li>
-                        <li>Collaborated closely with industry experts and stakeholders to meticulously analyze requirements, architect robust solutions, and deliver feature-rich modules.</li>
-                        <li>Leveraged Python, NoSQL, and Angular to create scalable, robust, and user-friendly components that fuel growth and innovation.</li>
+                        <li>Designed and developed core functionality for ERP systems, revolutionizing industries
+                            through technology with a focus on driving operational efficiency and empowering businesses.
+                        </li>
+                        <li>Collaborated closely with industry experts and stakeholders to meticulously analyze
+                            requirements, architect robust solutions, and deliver feature-rich modules.</li>
+                        <li>Leveraged Python, NoSQL, and Angular to create scalable, robust, and user-friendly
+                            components that fuel growth and innovation.</li>
                     </ul>
                 </div>
                 <!-- Cybaze Technologies Software Engineer -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-semibold text-gray-900">Software Engineer</h3>
-                    <p class="text-blue-600 font-medium mb-2">Cybaze Technologies Pvt. Ltd., Kerala, India | January 2021 – April 2021</p>
+                    <p class="text-blue-600 font-medium mb-2">Cybaze Technologies Pvt. Ltd., Kerala, India | January
+                        2021 – April 2021</p>
                     <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Discussed technical and design issues proactively with other developers, managers, users, and customers to achieve optimal solutions.</li>
-                        <li>Led a talented team of engineers in designing, developing, and deploying mission-critical software solutions, driving technology choices, and ensuring adherence to best practices.</li>
-                        <li>Collaborated closely with stakeholders to define project scope, manage expectations, and consistently deliver solutions that exceeded business goals.</li>
+                        <li>Discussed technical and design issues proactively with other developers, managers, users,
+                            and customers to achieve optimal solutions.</li>
+                        <li>Led a talented team of engineers in designing, developing, and deploying mission-critical
+                            software solutions, driving technology choices, and ensuring adherence to best practices.
+                        </li>
+                        <li>Collaborated closely with stakeholders to define project scope, manage expectations, and
+                            consistently deliver solutions that exceeded business goals.</li>
                     </ul>
                 </div>
                 <!-- Zoondia Software Engineer -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-semibold text-gray-900">Software Engineer</h3>
-                    <p class="text-blue-600 font-medium mb-2">Zoondia Software Pvt. Ltd., Kerala, India | May 2019 – November 2020</p>
+                    <p class="text-blue-600 font-medium mb-2">Zoondia Software Pvt. Ltd., Kerala, India | May 2019 –
+                        November 2020</p>
                     <ul class="list-disc list-inside text-gray-700 space-y-1">
-                        <li>Designed and developed high-performance Django APIs, facilitating seamless communication between front-end interfaces and backend services.</li>
-                        <li>Collaborated closely with cross-functional teams to gather precise requirements, architect effective solutions, and deliver API functionalities that met diverse user needs.</li>
-                        <li>Implemented best practices in API design, security, and performance optimization, resulting in enhanced application reliability and speed.</li>
-                        <li>Contributed actively to code reviews, ensuring adherence to stringent coding standards and driving continuous improvement across the codebase.</li>
+                        <li>Designed and developed high-performance Django APIs, facilitating seamless communication
+                            between front-end interfaces and backend services.</li>
+                        <li>Collaborated closely with cross-functional teams to gather precise requirements, architect
+                            effective solutions, and deliver API functionalities that met diverse user needs.</li>
+                        <li>Implemented best practices in API design, security, and performance optimization, resulting
+                            in enhanced application reliability and speed.</li>
+                        <li>Contributed actively to code reviews, ensuring adherence to stringent coding standards and
+                            driving continuous improvement across the codebase.</li>
                     </ul>
                 </div>
             </div>
@@ -279,21 +372,30 @@
                 <form id="contactForm" class="space-y-6">
                     <div>
                         <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Your Name</label>
-                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Doe" required>
+                        <input type="text" id="name" name="name"
+                            class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="John Doe" required>
                     </div>
                     <div>
                         <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Your Email</label>
-                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" required>
+                        <input type="email" id="email" name="email"
+                            class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="you@example.com" required>
                     </div>
                     <div>
                         <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Job Vacancy / Project Inquiry" required>
+                        <input type="text" id="subject" name="subject"
+                            class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Job Vacancy / Project Inquiry" required>
                     </div>
                     <div>
                         <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
-                        <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="I'm interested in discussing a potential opportunity..." required></textarea>
+                        <textarea id="message" name="message" rows="6"
+                            class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="I'm interested in discussing a potential opportunity..." required></textarea>
                     </div>
-                    <button type="submit" class="btn-primary w-full bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    <button type="submit"
+                        class="btn-primary w-full bg-blue-600 text-white px-6 py-3 rounded-md text-lg font-semibold shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
                         Send Message
                     </button>
                     <div id="form-message" class="mt-4 text-center text-sm font-medium hidden"></div>
@@ -305,18 +407,22 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 text-center">
         <div class="container mx-auto px-6">
-            <p>&copy; 2024 Ansaruddeen E. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2099</span> Ansaruddeen E. All rights reserved.</p>
             <div class="flex justify-center space-x-4 mt-4">
-                <a href="https://www.linkedin.com/in/ansaruddeene" target="_blank" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
-                <a href="https://twitter.com/AnsaruddeenE" target="_blank" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
-                <a href="mailto:ansarelampil@gmail.com" class="text-gray-400 hover:text-white transition duration-300">Email</a>
+                <!-- <a href="https://ansaruddeen-portfolio.netlify.app">Website</a> -->
+                <a href="https://www.linkedin.com/in/ansaruddeene" target="_blank"
+                    class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="https://twitter.com/AnsaruddeenE" target="_blank"
+                    class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+                <a id="copy-email" href="mailto:ansarelampil@gmail.com"
+                    class="text-gray-400 hover:text-white transition duration-300">Email</a>
             </div>
         </div>
     </footer>
 
     <script>
         // JavaScript for mobile menu toggle
-        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
@@ -356,7 +462,7 @@
         });
 
         // JavaScript for Contact Form Submission (using mailto:)
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent default form submission
 
             const name = document.getElementById('name').value;
@@ -392,6 +498,243 @@
                 formMessage.classList.add('hidden');
             }, 3000);
         });
+
+        const librariesAndTech = [
+            { name: "AWS", iconClass: "fab fa-aws" },
+            { name: "Web Services", iconClass: "fas fa-globe" },
+            { name: "REST", iconClass: "fas fa-exchange-alt" },
+            { name: "SQL & NoSQL", iconClass: "fas fa-database" },
+            { name: "Agile", iconClass: "fas fa-running" },
+            { name: "Git", iconClass: "fab fa-git-alt" },
+            { name: "IoT", iconClass: "fas fa-cogs" },
+            { name: "Crypto Payments", iconClass: "fab fa-bitcoin" },
+            { name: "Payment Gateways", iconClass: "fas fa-credit-card" },
+            { name: "Py-Libs", iconClass: "fas fa-code" },
+            { name: "ORM", iconClass: "fas fa-database" },
+            { name: "jQuery", iconClass: "fab fa-js" },
+            { name: "Bootstrap", iconClass: "fab fa-bootstrap" }
+        ];
+
+        const architecturalSkills = [
+            { name: "System Designing", iconClass: "fas fa-drafting-compass" },
+            { name: "Distributed Computing", iconClass: "fas fa-network-wired" },
+            { name: "Software Architecture", iconClass: "fas fa-cogs" },
+            { name: "Process Optimization", iconClass: "fas fa-rocket" },
+            { name: "Object-Oriented Concepts", iconClass: "fas fa-object-group" },
+            { name: "Debugging", iconClass: "fas fa-bug" }
+        ];
+
+        const languages = [
+            { name: "Python", iconClass: "fab fa-python" },
+            { name: "TypeScript", iconClass: "fab fa-node-js" },
+            { name: "JavaScript", iconClass: "fab fa-js-square" },
+            { name: "Dart", iconClass: "fab fa-js-square" },
+            { name: "Kotlin", iconClass: "fab fa-android" },
+            { name: "HTML", iconClass: "fab fa-html5" },
+            { name: "CSS", iconClass: "fab fa-css3-alt" },
+            { name: "PHP", iconClass: "fab fa-php" },
+            // { name: "Java", iconClass: "fab fa-java" }
+        ];
+
+        const frameworks = [
+            { name: "Django", iconClass: "fas fa-cubes" },
+            { name: "FastAPI", iconClass: "fas fa-bolt" },
+            { name: "Flask", iconClass: "fas fa-boxes" },
+            { name: "Vue.js", iconClass: "fab fa-vuejs" },
+            { name: "Angular", iconClass: "fab fa-angular" },
+            { name: "Android", iconClass: "fab fa-android" },
+            { name: "Flutter", iconClass: "fas fa-dove" }
+        ];
+
+        // Function to create a skill card element
+        function createSkillCard(skill) {
+            const skillCard = document.createElement('div');
+            skillCard.classList.add('skill-card');
+            skillCard.innerHTML = `
+                <span class="skill-icon">
+                    <i class="${skill.iconClass}"></i>
+                </span>
+                <p class="skill-name">${skill.name}</p>
+            `;
+            return skillCard;
+        }
+
+        // Function to render all skill cards for a given array and container
+        function renderSkills(skillsArray, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return; // Exit if the container doesn't exist
+
+            skillsArray.forEach(skill => {
+                const card = createSkillCard(skill);
+                container.appendChild(card);
+            });
+        }
+
+        // This function converts a number (up to 99) into its English word form.
+        function numberToWords(n) {
+            const singleDigits = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+            const teens = ['ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+            const tens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+
+            if (n < 10) {
+                return singleDigits[n];
+            } else if (n >= 10 && n < 20) {
+                return teens[n - 10];
+            } else if (n >= 20 && n < 100) {
+                const digit1 = Math.floor(n / 10);
+                const digit2 = n % 10;
+                return tens[digit1] + (digit2 > 0 ? ' ' + singleDigits[digit2] : '');
+            }
+
+            return n.toString(); // Return as a digit if it's over 99
+        }
+
+        // This function calculates and displays the years of experience.
+        function updateYearsOfExperience() {
+            const startDate = new Date('2019-05-01'); // May 1, 2019
+            const currentDate = new Date();
+            const years = currentDate.getFullYear() - startDate.getFullYear();
+            const experienceElement = document.getElementById('years-of-experience');
+            if (experienceElement) {
+                experienceElement.textContent = numberToWords(years);
+            }
+        }
+
+        // Function to dynamically update the copyright year in the footer
+        function updateCopyrightYear() {
+            const yearElement = document.getElementById('current-year');
+            if (yearElement) {
+                const currentYear = new Date().getFullYear();
+                yearElement.textContent = currentYear;
+            }
+        }
+
+        function setupEmailCopy() {
+            const emailLink = document.getElementById('copy-email');
+            if (!emailLink) return;
+
+            const emailToCopy = 'ansarelampil@gmail.com';
+
+            emailLink.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                navigator.clipboard.writeText(emailToCopy).then(() => {
+                    // Show a tooltip or temporary message
+                    const originalText = emailLink.textContent;
+                    emailLink.textContent = 'Copied!';
+
+                    setTimeout(() => {
+                        emailLink.textContent = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy email: ', err);
+                    // Fallback for older browsers
+                    // This method is not recommended but can be used as a failsafe
+                    const textarea = document.createElement('textarea');
+                    textarea.value = emailToCopy;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+
+                    const originalText = emailLink.textContent;
+                    emailLink.textContent = 'Copied!';
+
+                    setTimeout(() => {
+                        emailLink.textContent = originalText;
+                    }, 2000);
+                });
+            });
+        }
+
+        // Function to create the typing effect
+        function setupTypingEffect1() {
+            const textElement = document.getElementById('typing-effect');
+            if (!textElement) return;
+
+            const textToType = "Are you interested in collaborating on a project, discussing the latest tech trends, learning more about my skills, exploring job opportunities, or simply saying hello? I'd love to connect!";
+            let charIndex = 0;
+            const typingSpeed = 50; // Milliseconds per character
+
+            function type() {
+                if (charIndex < textToType.length) {
+                    textElement.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            // Start the typing animation after a small delay
+            setTimeout(type, 500); // 500ms delay before starting
+        }
+
+        // Function to create the typing and deleting effect for an array of phrases
+        function setupTypingEffect() {
+            const textElement = document.getElementById('typing-effect');
+
+            if (!textElement) return;
+
+            // Check the parent element for a dark background class
+            const parentElement = textElement.parentElement;
+            if (parentElement && parentElement.classList.contains('bg-gray-800')) {
+                textElement.classList.add('text-white');
+            }
+
+            const phrases = [
+                "🤝 Are you interested in collaborating on a project?",
+                "🚀 Discussing the latest tech trends?",
+                "💼 Exploring job opportunities?",
+                "👋 Or simply saying hello?",
+                "🔗 I'd love to connect!"
+            ];
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            const typingSpeed = 50;   // Milliseconds per character
+            const erasingSpeed = 30;  // Milliseconds per character (for deleting)
+            const newPhraseDelay = 1500; // Delay before typing the next phrase
+
+            function type() {
+                if (charIndex < phrases[phraseIndex].length) {
+                    textElement.textContent += phrases[phraseIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    // Wait for a bit, then start erasing
+                    setTimeout(erase, newPhraseDelay);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    textElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+                    charIndex--;
+                    setTimeout(erase, erasingSpeed);
+                } else {
+                    // Move to the next phrase in the array
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    // Start typing the next phrase
+                    setTimeout(type, typingSpeed);
+                }
+            }
+
+            // Start the whole animation when the function is called
+            setTimeout(type, newPhraseDelay);
+        }
+
+        // Call the render function for each section
+        document.addEventListener('DOMContentLoaded', () => {
+            updateYearsOfExperience();
+            updateCopyrightYear();
+            renderSkills(languages, 'languages-grid');
+            renderSkills(frameworks, 'frameworks-grid');
+            renderSkills(librariesAndTech, 'librariesAndTechs-grid');
+            renderSkills(architecturalSkills, 'architectural-skills-grid');
+            setupEmailCopy();
+            setupTypingEffect();
+
+        });
     </script>
 </body>
+
 </html>
